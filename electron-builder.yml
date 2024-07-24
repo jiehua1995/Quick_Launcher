@@ -1,0 +1,24 @@
+appId: com.yourcompany.quicklauncher
+files:
+  - renderer/**
+  - main.js
+  - preload.js
+  - quick.json
+directories:
+  buildResources: assets
+win:
+  target:
+    - nsis
+  icon: assets/icon.ico
+nsis:
+  oneClick: false
+  perMachine: true
+  allowToChangeInstallationDirectory: true
+mac:
+  target:
+    - dmg
+  icon: assets/icon.icns
+linux:
+  target:
+    - AppImage
+  icon: assets/icon.png

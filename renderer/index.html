@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Launcher</title>
+  <link href="tailwind.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="container mx-auto p-6">
+    <h1 class="text-2xl font-bold mb-4">Quick Launcher</h1>
+    <div id="app-list" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+    <div class="mt-4 text-sm text-gray-600">
+      <p>&copy; 2024 Quick Launcher. All rights reserved.</p>
+      <p>Powered by <a href="mailto:jiehua@example.com">Jie Hua</a></p>
+      <p id="user-data-path" class="mt-2"></p>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+    "scripts": {
+      "build-css": "npx tailwindcss -i ./renderer/styles.css -o ./renderer/tailwind.css --watch",
+      "start": "npm run build-css & electron ."
+    }
+  }
+  

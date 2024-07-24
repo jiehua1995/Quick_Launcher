@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app-item {
+  @apply flex flex-col items-center p-4 bg-white rounded-lg shadow-md cursor-pointer transition-transform duration-200;
+}
+.app-item:hover {
+  @apply transform scale-105;
+}
+.app-icon {
+  @apply w-16 h-16 mb-2;
+}
+.app-item span {
+  @apply text-sm font-medium;
+}
+a {
+  color: blue;
+}
+a:hover {
+  color: darkblue;
+}
