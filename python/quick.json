@@ -1,0 +1,47 @@
+{
+    "items": [
+      {
+        "name": "Rstudio",
+        "path": "C:\\Software\\RStudio\\rstudio.exe",
+        "icon": "https://marketplace-assets.digitalocean.com/logos/rstudio-20-04.svg",
+        "type": "app"
+      },
+      {
+        "name": "VS Code",
+        "path": "C:\\Software\\Microsoft VS Code\\Code.exe",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg",
+        "type": "app"
+      },
+      {
+        "name": "LMU NutStore",
+        "path": "C:\\Data_Software\\NutStore\\LMU",
+        "icon": "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678084-folder-512.png",
+        "type": "folder"
+      },
+      {
+        "name": "NAS_AIG_jhua",
+        "path": "Z:\\AIG\\jhua",
+        "icon": "https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/data-512.png",
+        "type": "folder"
+      },
+      {
+        "name": "NAS_shared_Hua",
+        "path": "Z:\\AIG\\Shared\\Hua",
+        "icon": "https://cdn1.iconfinder.com/data/icons/aami-flat-folders/64/folder-31-512.png",
+        "type": "folder"
+      },
+      {
+        "name": "Exp Log",
+        "path": "C:\\Data_Software\\NutStore\\LMU\\Exp_logs\\Exp_logs.xlsx",
+        "icon": "https://cdn3.iconfinder.com/data/icons/logos-brands-3/24/logo_brand_brands_logos_excel-512.png",
+        "type": "file"
+      },
+      {
+        "name": "Zotero",
+        "path": "C:\\Software\\Zotero\\zotero.exe",
+        "icon": "https://cdn3.iconfinder.com/data/icons/letters-and-numbers-1/32/letter_Z_red-512.png",
+        "type": "app"
+      }
+    ]
+  }
+  
