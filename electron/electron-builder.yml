@@ -1,24 +1,26 @@
-appId: com.yourcompany.quicklauncher
+appId: com.jiehua.quicklauncher
+productName: QuickLauncher
 files:
   - renderer/**
   - main.js
   - preload.js
   - quick.json
 directories:
+  output: dist
   buildResources: assets
+linux:
+  target:
+    - deb
+    - rpm
+  artifactName: "${productName}-v${version}-${os}-${arch}.${ext}"
+  icon: assets/icon.png
 win:
   target:
     - nsis
+  artifactName: "${productName}-v${version}-${os}-${arch}.${ext}"
   icon: assets/icon.ico
-nsis:
-  oneClick: false
-  perMachine: true
-  allowToChangeInstallationDirectory: true
 mac:
   target:
     - dmg
+  artifactName: "${productName}-v${version}-${os}-${arch}.${ext}"
   icon: assets/icon.icns
-linux:
-  target:
-    - AppImage
-  icon: assets/icon.png
