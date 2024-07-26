@@ -1,3 +1,7 @@
+# python 
+python/dist
+python/build
+
 # Logs
 logs
 *.log

@@ -1,6 +1,6 @@
 {
   "name": "quick_launcher",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A quick launcher for various applications using Electron and TailwindCSS.",
   "main": "main.js",
   "scripts": {
