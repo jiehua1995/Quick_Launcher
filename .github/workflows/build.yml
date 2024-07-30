@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -27,13 +27,33 @@ jobs:
       - name: Install dependencies
         run: npm install
         working-directory: ./electron
+      
+      - name: Install npm-check-updates
+        run: npm install -g npm-check-updates
+        working-directory: ./electron
+
+      - name: Update dependencies
+        run: ncu -u
+        working-directory: ./electron
+
+      - name: Install updated dependencies
+        run: npm install
+        working-directory: ./electron
 
       - name: Build CSS
         run: npm run build-css
         working-directory: ./electron
 
       - name: Build Electron app for ${{ matrix.os }}
-        run: npx electron-builder --${{ matrix.os == 'ubuntu-latest' && 'linux' || matrix.os == 'windows-latest' && 'win' || 'mac'}} 
+        run: |
+          if [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
+            npx electron-builder --linux
+          elif [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+            npx electron-builder --win
+          else
+            npx electron-builder --mac
+          fi
+        shell: bash
         working-directory: ./electron
 
       - name: Upload Electron Artifacts

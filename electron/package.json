@@ -8,8 +8,11 @@
     "start": "npm run build-css && electron .",
     "dist": "npm run build-css && electron-builder -mwl"
   },
-  "author": "Jie Hua",
-  "email": "Jie.Hua@lmu.de",
+  "author": {
+    "name": "Jie Hua",
+    "email": "Jie.Hua@lmu.de"
+  },
+  "homepage": "https://github.com/jiehua1995/Quick_Launcher",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^10.4.19",
@@ -20,5 +23,9 @@
   },
   "dependencies": {
     "@electron/remote": "^2.1.2"
-  }
+  },
+  "build": {
+    "linux": {
+      "maintainer": "Jie Hua <fdjiehua@gmail.com>"
+    }
 }
