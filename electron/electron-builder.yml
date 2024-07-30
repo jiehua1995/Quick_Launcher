@@ -8,19 +8,32 @@ files:
 directories:
   output: dist
   buildResources: assets
+
 linux:
   target:
     - deb
     - rpm
+  maintainers: "Jie Hua <fdjiehua@gmail.com>"
   artifactName: "${productName}-v${version}-${os}-${arch}.${ext}"
   icon: assets/icon.png
+
 win:
   target:
     - nsis
   artifactName: "${productName}-v${version}-${os}-${arch}.${ext}"
   icon: assets/icon.ico
+
+nsis:
+  oneClick: false
+  perMachine: true
+  allowToChangeInstallationDirectory: true
+  deleteAppDataOnUninstall: true
+
 mac:
   target:
     - dmg
   artifactName: "${productName}-v${version}-${os}-${arch}.${ext}"
+  category: public.app-category.education
   icon: assets/icon.icns
+  hardenedRuntime: false
+  gatekeeperAssess: false
