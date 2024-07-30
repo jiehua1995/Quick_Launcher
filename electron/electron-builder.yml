@@ -13,7 +13,7 @@ linux:
   target:
     - deb
     - rpm
-  maintainers: "Jie Hua <fdjiehua@gmail.com>"
+  maintainer: "Jie Hua <fdjiehua@gmail.com>"
   artifactName: "${productName}-v${version}-${os}-${arch}.${ext}"
   icon: assets/icon.png
 
