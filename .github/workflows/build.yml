@@ -24,6 +24,10 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Install electron-builder
+        run: npm install -g electron-builder
+        working-directory: ./electron
+
       - name: Install dependencies
         run: npm install
         working-directory: ./electron
@@ -33,7 +37,7 @@ jobs:
         working-directory: ./electron
 
       - name: Build Electron app
-        run: npx electron-builder -mwl
+        run: electron-builder -mwl
         working-directory: ./electron
 
       - name: Upload Electron Artifacts
@@ -41,32 +45,3 @@ jobs:
         with:
           name: electron-dist
           path: electron/dist/
-
-  build-python:
-    runs-on: windows-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.9'
-
-      - name: Install dependencies
-        run: pip install pyinstaller
-
-      - name: Build Python app
-        run: pyinstaller --onefile --windowed QuickLauncher.spec
-        working-directory: ./python
-
-      - name: Package Installer
-        run: "C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe QuickLauncherInstaller.iss"
-        working-directory: ./python
-
-      - name: Upload Python Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: python-dist
-          path: python/dist/

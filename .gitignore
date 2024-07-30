@@ -2,6 +2,10 @@
 python/dist
 python/build
 
+# electron
+electron/node_modules
+electron/dist
+
 # Logs
 logs
 *.log
