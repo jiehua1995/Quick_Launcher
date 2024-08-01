@@ -8,11 +8,11 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
   <div class="container mx-auto p-6">
-    <h1 class="text-2xl font-bold mb-4">Quick Launcher</h1>
-    <div id="app-list" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
-    <div class="mt-4 text-sm text-gray-600">
-      <p>&copy; 2024 Quick Launcher. All rights reserved.</p>
-      <p>Powered by <a href="mailto:jiehua@example.com">Jie Hua</a></p>
+    <h1 class="text-2xl font-bold mb-4 hidden">Quick Launcher</h1>
+    <div id="app-list-container"></div> <!-- 应用列表容器 -->
+    <div class="mt-4 text-sm text-gray-500 text-center" id="footer">
+      <p class="mb-1">&copy; 2024 Quick Launcher. All rights reserved.</p>
+      <p class="mb-1">Powered by <a href="mailto:jiehua@example.com" class="text-blue-600 hover:text-blue-800">Jie Hua</a></p>
       <p id="user-data-path" class="mt-2"></p>
     </div>
   </div>

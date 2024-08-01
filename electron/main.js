@@ -17,7 +17,7 @@ function createWindow() {
       partition: 'nopersist' // 使用非持久性分区
     },
     autoHideMenuBar: true, // 隐藏菜单栏
-    icon: path.join(__dirname, 'assets', 'icon.png') // 指定图标文件路径
+    icon: path.join(__dirname, 'assets', '48x48.png') // 指定图标文件路径
   });
 
   mainWindow.loadFile(path.join(__dirname, 'renderer', 'index.html'));

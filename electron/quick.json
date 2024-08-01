@@ -4,37 +4,29 @@
       "name": "Rstudio",
       "path": "C:\\Software\\RStudio\\rstudio.exe",
       "icon": "https://marketplace-assets.digitalocean.com/logos/rstudio-20-04.svg",
-      "type": "app"
+      "type": "app",
+      "category": "Development"
     },
     {
       "name": "VS Code",
       "path": "C:\\Users\\User\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
       "icon": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg",
-      "type": "app"
+      "type": "app",
+      "category": "Development"
     },
     {
       "name": "Documents",
       "path": "C:\\Users\\User\\Documents",
       "icon": "https://upload.wikimedia.org/wikipedia/commons/8/87/Google_Chrome_icon_%282011%29.png",
-      "type": "folder"
+      "type": "folder",
+      "category": "Files"
     },
     {
       "name": "Example Excel File",
       "path": "C:\\Users\\User\\Documents\\example.xlsx",
       "icon": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Microsoft_Excel_2013_logo.svg",
-      "type": "file"
-    },
-    {
-      "name": "Example Word File",
-      "path": "C:\\Users\\User\\Documents\\example.docx",
-      "icon": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Microsoft_Office_Word_%282019-present%29.svg",
-      "type": "file"
-    },
-    {
-      "name": "Exampggg Text File",
-      "path": "C:\\Users\\User\\Documents\\example.txt",
-      "icon": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Text-x-generic.svg",
-      "type": "file"
+      "type": "file",
+      "category": "Files"
     }
   ]
 }
