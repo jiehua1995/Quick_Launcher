@@ -14,6 +14,7 @@ function createWindow() {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       webSecurity: false,
+      
       partition: 'nopersist' // 使用非持久性分区
     },
     autoHideMenuBar: true, // 隐藏菜单栏

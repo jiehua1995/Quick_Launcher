@@ -5,17 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quick Launcher</title>
   <link href="tailwind.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+  <style>
+    /* 自定义滚动条样式 */
+    select::-webkit-scrollbar {
+      width: 6px; /* 滚动条宽度 */
+    }
+    select::-webkit-scrollbar-track {
+      background: #f1f1f1; /* 滚动条轨道颜色 */
+    }
+    select::-webkit-scrollbar-thumb {
+      background: #888; /* 滚动条颜色 */
+      border-radius: 3px; /* 滚动条圆角 */
+    }
+    select::-webkit-scrollbar-thumb:hover {
+      background: #555; /* 悬停时滚动条颜色 */
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <div class="container mx-auto p-6">
-    <h1 class="text-2xl font-bold mb-4 hidden">Quick Launcher</h1>
-    <div id="app-list-container"></div> <!-- 应用列表容器 -->
-    <div class="mt-4 text-sm text-gray-500 text-center" id="footer">
-      <p class="mb-1">&copy; 2024 Quick Launcher. All rights reserved.</p>
-      <p class="mb-1">Powered by <a href="mailto:jiehua@example.com" class="text-blue-600 hover:text-blue-800">Jie Hua</a></p>
-      <p id="user-data-path" class="mt-2"></p>
+<body class="bg-base-200 text-base-content">
+  <div class="flex h-screen">
+    <!-- 侧边栏 -->
+    <div class="w-1/4 bg-base-100 p-4 flex flex-col">
+      <h2 class="text-xl font-bold mb-4">Categories</h2>
+      <ul id="category-list" class="space-y-2 flex-grow overflow-y-auto">
+        <!-- 类别将通过JavaScript动态添加 -->
+      </ul>
+      <!-- 主题选择器 -->
+      <div class="border-t border-gray-300 pt-4">
+        <label for="theme-selector" class="block text-base-content mb-2">Theme</label>
+        <select id="theme-selector" class="select select-bordered w-full mt-2" data-choose-theme>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="cupcake">Cupcake</option>
+          <option value="bumblebee">Bumblebee</option>
+          <option value="emerald">Emerald</option>
+          <option value="corporate">Corporate</option>
+          <option value="synthwave">Synthwave</option>
+          <option value="retro">Retro</option>
+          <option value="cyberpunk">Cyberpunk</option>
+          <option value="valentine">Valentine</option>
+          <option value="halloween">Halloween</option>
+          <option value="garden">Garden</option>
+          <option value="forest">Forest</option>
+          <option value="aqua">Aqua</option>
+          <option value="lofi">Lofi</option>
+          <option value="pastel">Pastel</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="wireframe">Wireframe</option>
+          <option value="black">Black</option>
+          <option value="luxury">Luxury</option>
+          <option value="dracula">Dracula</option>
+        </select>
+      </div>
+    </div>
+    
+    <!-- 主内容区域 -->
+    <div class="w-3/4 flex flex-col">
+      <div class="p-6 flex-grow" id="main-content">
+        <div id="app-list-container" class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
+          <!-- 图标将通过JavaScript动态添加 -->
+        </div>
+      </div>
+      <!-- 页脚 -->
+      <!-- 页脚 -->
+      <div class="text-sm text-base-content text-center p-4 bg-base-200 shadow" id="footer">
+        <div class="flex justify-center items-center space-x-4">
+          <p class="mb-1">&copy; 2024 Quick Launcher. All rights reserved.</p>
+        </div>
+        <div class="flex justify-center items-center space-x-2">
+          <p class="mb-1">Current version: <span id="current-version">0.0.1</span></p>
+          <span class="animate-bounce text-red-500">&hearts;</span>
+          <p class="mb-1">Powered by <a href="mailto:jiehua@example.com" class="text-blue-600 hover:text-blue-800">Jie Hua</a></p>
+        </div>
+        <p id="user-data-path" class="mt-2"></p>
+      </div>
+
     </div>
   </div>
+
   <script src="renderer.js"></script>
 </body>
 </html>

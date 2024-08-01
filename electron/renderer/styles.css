@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 .app-item {
-  @apply flex flex-col items-center p-4 bg-white rounded-lg shadow-md cursor-pointer transition-transform duration-200;
+  @apply flex flex-col items-center p-4 bg-base-100 rounded-lg shadow-md cursor-pointer transition-transform duration-200;
 }
 .app-item:hover {
-  @apply transform scale-105;
+  @apply transform scale-105 bg-base-200;
 }
 .app-icon {
   @apply w-16 h-16 mb-2;
@@ -15,8 +15,8 @@
   @apply text-sm font-medium;
 }
 a {
-  color: blue;
+  @apply text-blue-500;
 }
 a:hover {
-  color: darkblue;
+  @apply text-blue-700;
 }
