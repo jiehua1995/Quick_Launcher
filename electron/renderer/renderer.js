@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   let allItems = [];
-  let currentVersion = "0.0.1"; // 替换为你的当前版本
+  let currentVersion = "0.1.1"; // 替换为你的当前版本
   let defaultTheme = "light"; // 默认主题
 
   // 获取应用信息和设置

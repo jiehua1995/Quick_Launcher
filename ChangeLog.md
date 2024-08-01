@@ -2,6 +2,25 @@
 
 All notable changes to this project should be documented in this file.
 
+## August 1, 2024. v0.1.1 Sidebar and Multiple themes
+
+### Added
+
+#### Electron version
+
+1. Allow to define categories, add a sidebar.
+2. Add multiple themes from [daisyui](https://daisyui.com/).
+
+
+### Removed
+
+#### Python version
+
+1. Intermediate files.
+2. Wrong building setting.
+
+
+
 ## July 26, 2024. The first version of the "Quick Launcher" [electron v0.0.1, python v0.0.1]
 
 ### Added

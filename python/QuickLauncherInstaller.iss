@@ -1,6 +1,6 @@
 [Setup]
 AppName=Quick Launcher
-AppVersion=0.0.1
+AppVersion=0.1.1
 DefaultDirName={pf}\QuickLauncher
 DefaultGroupName=QuickLauncher
 OutputDir=.
