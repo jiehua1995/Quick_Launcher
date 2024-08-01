@@ -6,7 +6,7 @@
   "scripts": {
     "build-css": "npx tailwindcss -i ./renderer/styles.css -o ./renderer/tailwind.css",
     "start": "npm run build-css && electron .",
-    "dist": "npm run build-css && electron-builder -mwl"
+    "dist": "npm run build-css && electron-builder"
   },
   "author": {
     "name": "Jie Hua",

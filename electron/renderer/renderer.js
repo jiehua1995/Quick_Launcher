@@ -96,6 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
   checkForNewRelease();
 });
 
+// 页面加载完成后，通知主进程
+window.electron.notifyReady();
+
 function checkForNewRelease() {
   const repo = "jiehua1995/Quick_Launcher"; // 替换为你的GitHub仓库
   fetch(`https://api.github.com/repos/${repo}/releases/latest`)
@@ -127,3 +130,4 @@ function showNewReleaseNotification(url) {
   `;
   footer.appendChild(notification);
 }
+

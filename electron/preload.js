@@ -6,5 +6,6 @@ contextBridge.exposeInMainWorld('electron', {
   launchApp: (appPath, appName) => ipcRenderer.send('launch-app', appPath, appName),
   openFolder: (folderPath) => ipcRenderer.send('open-folder', folderPath),
   openFile: (filePath) => ipcRenderer.send('open-file', filePath),
-  getUserDataPath: () => ipcRenderer.invoke('get-user-data-path')
+  getUserDataPath: () => ipcRenderer.invoke('get-user-data-path'),
+  notifyReady: () => ipcRenderer.send('content-ready')
 });

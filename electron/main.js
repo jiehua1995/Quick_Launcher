@@ -4,21 +4,39 @@ const fs = require('fs');
 const { spawn } = require('child_process');
 
 let mainWindow;
+let loadingWindow;
 
 app.disableHardwareAcceleration();
 
-function createWindow() {
+function createLoadingWindow() {
+  loadingWindow = new BrowserWindow({
+    width: 300,
+    height: 300,
+    frame: false,
+    transparent: true,
+    alwaysOnTop: true,
+    webPreferences: {
+      nodeIntegration: false
+    }
+  });
+
+  loadingWindow.loadFile(path.join(__dirname, 'renderer', 'loading.html'));
+}
+
+function createMainWindow() {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    minWidth: 400,
+    minHeight: 300,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       webSecurity: false,
-      
-      partition: 'nopersist' // 使用非持久性分区
+      partition: 'nopersist'
     },
-    autoHideMenuBar: true, // 隐藏菜单栏
-    icon: path.join(__dirname, 'assets', '48x48.png') // 指定图标文件路径
+    autoHideMenuBar: true,
+    icon: path.join(__dirname, 'assets', '48x48.png'),
+    show: false  // 先隐藏主窗口，等内容准备好再显示
   });
 
   mainWindow.loadFile(path.join(__dirname, 'renderer', 'index.html'));
@@ -39,7 +57,20 @@ function createWindow() {
   });
 }
 
-app.on('ready', createWindow);
+app.on('ready', () => {
+  createLoadingWindow();
+  createMainWindow();
+});
+
+ipcMain.on('content-ready', () => {
+  if (loadingWindow) {
+    loadingWindow.close();
+    loadingWindow = null;
+  }
+  if (mainWindow) {
+    mainWindow.show();
+  }
+});
 
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
@@ -49,7 +80,7 @@ app.on('window-all-closed', function () {
 
 app.on('activate', function () {
   if (mainWindow === null) {
-    createWindow();
+    createMainWindow();
   }
 });
 
@@ -58,7 +89,7 @@ ipcMain.handle('get-user-data-path', () => {
 });
 
 ipcMain.on('get-apps', (event) => {
-  const userDataPath = app.getPath('userData'); // 获取用户数据目录
+  const userDataPath = app.getPath('userData');
   const defaultDataPath = path.join(__dirname, 'quick.json');
   const customDataPath = path.join(userDataPath, 'quick.json');
 

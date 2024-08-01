@@ -1630,6 +1630,10 @@ html {
   }
 }
 
+.absolute {
+  position: absolute;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -1688,6 +1692,10 @@ html {
 
 .flex-grow {
   flex-grow: 1;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @keyframes bounce {
@@ -1758,6 +1766,10 @@ html {
 
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-t {

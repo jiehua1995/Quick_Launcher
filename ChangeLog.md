@@ -2,6 +2,15 @@
 
 All notable changes to this project should be documented in this file.
 
+## 
+
+### Electron version
+
+1. Restrict midwidth and midheight of the window.
+2. Add a loading page for startup.
+
+
+
 ## August 1, 2024. v0.1.1 Sidebar and Multiple themes
 
 ### Added
