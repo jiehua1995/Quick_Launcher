@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   let allItems = [];
   let currentVersion = "0.1.1"; // 替换为你的当前版本
-  let defaultTheme = "light"; // 默认主题
+  let defaultTheme = "cupcake"; // 默认主题
 
   // 获取应用信息和设置
   window.electron.getApps();
 
   window.electron.onSendApps((data) => {
     allItems = data.items;
-    defaultTheme = data.defaultTheme || "light"; // 获取默认主题
+    defaultTheme = data.defaultTheme || "cupcake"; // 获取默认主题
 
     // 设置默认主题
     document.documentElement.setAttribute('data-theme', defaultTheme);
@@ -50,6 +50,40 @@ document.addEventListener('DOMContentLoaded', () => {
   themeSelector.addEventListener('change', (event) => {
     document.documentElement.setAttribute('data-theme', event.target.value);
   });
+
+
+  // 实现侧边栏调整功能
+  const sidebar = document.getElementById('sidebar');
+  const divider = document.getElementById('divider');
+  const mainContent = document.getElementById('main-content');
+
+  let isResizing = false;
+
+  divider.addEventListener('mousedown', () => {
+    isResizing = true;
+    document.body.style.cursor = 'col-resize';
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isResizing) return;
+
+    let newWidth = e.clientX;
+
+    if (newWidth < 100) newWidth = 100; // 设置最小宽度
+    if (newWidth > window.innerWidth * 0.5) newWidth = window.innerWidth * 0.5; // 设置最大宽度
+
+    sidebar.style.width = `${newWidth}px`;
+    mainContent.style.flex = `1 0 calc(100% - ${newWidth}px)`;
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (isResizing) {
+      isResizing = false;
+      document.body.style.cursor = 'default';
+    }
+  });
+
+
 
   function displayCategory(category) {
     const appListContainer = document.getElementById('app-list-container');

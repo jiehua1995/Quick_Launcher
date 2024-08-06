@@ -20,3 +20,7 @@ a {
 a:hover {
   @apply text-blue-700;
 }
+#sidebar {
+  min-width: 100px;
+  max-width: 50%;
+}
