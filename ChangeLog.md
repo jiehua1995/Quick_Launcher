@@ -2,12 +2,18 @@
 
 All notable changes to this project should be documented in this file.
 
-## 
+## August 10, 2024. v0.2.1
 
-### Electron version
+### Added
 
 1. Restrict midwidth and midheight of the window.
 2. Add a loading page for startup.
+3. Allow adjustable sidebar.
+4. Update main window logic.
+5. Allow software to check the latest version.
+
+### Removed
+1. Stop python version development.
 
 
 

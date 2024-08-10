@@ -15,6 +15,7 @@ function createLoadingWindow() {
     frame: false,
     transparent: true,
     alwaysOnTop: true,
+    icon: path.join(__dirname, 'assets', 'icon.ico'),
     webPreferences: {
       nodeIntegration: false
     }
@@ -35,8 +36,8 @@ function createMainWindow() {
       partition: 'nopersist'
     },
     autoHideMenuBar: true,
-    icon: path.join(__dirname, 'assets', '48x48.png'),
-    show: false  // 先隐藏主窗口，等内容准备好再显示
+    icon: path.join(__dirname, 'assets', 'icon.ico'),
+    show: false // 先隐藏主窗口，等内容准备好再显示
   });
 
   mainWindow.loadFile(path.join(__dirname, 'renderer', 'index.html'));
@@ -60,16 +61,20 @@ function createMainWindow() {
 app.on('ready', () => {
   createLoadingWindow();
   createMainWindow();
+
+  // 在2秒后显示主窗口并关闭加载窗口
+  setTimeout(() => {
+    if (loadingWindow) {
+      loadingWindow.close();
+      loadingWindow = null;
+    }
+    if (mainWindow) {
+      mainWindow.show();
+    }
+  }, 2000); // 延迟2秒
 });
 
 ipcMain.on('content-ready', () => {
-  if (loadingWindow) {
-    loadingWindow.close();
-    loadingWindow = null;
-  }
-  if (mainWindow) {
-    mainWindow.show();
-  }
 });
 
 app.on('window-all-closed', function () {
