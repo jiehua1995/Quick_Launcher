@@ -24,5 +24,8 @@
   },
   "dependencies": {
     "@electron/remote": "^2.1.2"
+  },
+  "optionalDependencies": {
+    "dmg-license": "^1.0.11"
   }
 }
