@@ -25,7 +25,12 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          if [[ "${{ matrix.os }}" == "macos-latest" ]]; then
+            npm install
+          else
+            npm install --ignore-scripts
+          fi
         working-directory: ./electron
       
       - name: Install npm-check-updates
@@ -37,7 +42,12 @@ jobs:
         working-directory: ./electron
 
       - name: Install updated dependencies
-        run: npm install
+        run: |
+          if [[ "${{ matrix.os }}" == "macos-latest" ]]; then
+            npm install
+          else
+            npm install --ignore-scripts
+          fi
         working-directory: ./electron
 
       - name: Build CSS
