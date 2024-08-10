@@ -54,11 +54,11 @@ jobs:
       - name: Build Electron app for ${{ matrix.os }}
         run: |
           if [ "${{ matrix.os }}" == "ubuntu-latest" ]; then
-            npx electron-builder --linux
+            npm run dist
           elif [ "${{ matrix.os }}" == "windows-latest" ]; then
-            npx electron-builder --win
+            npm run dist
           elif [ "${{ matrix.os }}" == "macos-latest" ]; then
-            npx electron-builder --mac
+            npm run dist
           fi
         shell: bash
         working-directory: ./electron
