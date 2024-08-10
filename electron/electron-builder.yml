@@ -33,7 +33,6 @@ mac:
   target:
     - dmg
   artifactName: "${productName}-v${version}-${os}-${arch}.${ext}"
-  category: public.app-category.education
   icon: assets/icon.icns
   hardenedRuntime: false
   gatekeeperAssess: false
