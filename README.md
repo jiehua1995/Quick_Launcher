@@ -1,5 +1,6 @@
 # Quick_Launcher
-![GitHub contributors](https://img.shields.io/github/contributors/jiehua1995/Quick_Launcher) ![GitHub commits since latest release](https://img.shields.io/github/commits-since/jiehua1995/Quick_Launcher/latest) ![GitHub Release Date](https://img.shields.io/github/release-date/jiehua1995/Quick_Launcher) ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/jiehua1995/Quick_Launcher/total) ![GitHub License](https://img.shields.io/github/license/jiehua1995/Quick_Launcher) 
+![GitHub contributors](https://img.shields.io/github/contributors/jiehua1995/Quick_Launcher) ![GitHub commits since latest release](https://img.shields.io/github/commits-since/jiehua1995/Quick_Launcher/latest) ![GitHub Release Date](https://img.shields.io/github/release-date/jiehua1995/Quick_Launcher) ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/jiehua1995/Quick_Launcher/total) ![GitHub License](https://img.shields.io/github/license/jiehua1995/Quick_Launcher) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fjiehua1995%2FQuick_Launcher.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fjiehua1995%2FQuick_Launcher?ref=badge_shield)
+
 
 
 
@@ -17,3 +18,7 @@ Python version: fast, however not so beautiful.
 
 
 [Change Log](ChangeLog.md)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fjiehua1995%2FQuick_Launcher.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fjiehua1995%2FQuick_Launcher?ref=badge_large)
