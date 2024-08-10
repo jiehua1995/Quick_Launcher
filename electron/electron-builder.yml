@@ -37,4 +37,3 @@ mac:
   icon: assets/icon.icns
   hardenedRuntime: false
   gatekeeperAssess: false
-  license: null
