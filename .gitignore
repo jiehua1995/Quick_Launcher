@@ -5,6 +5,7 @@ python/build
 # electron
 electron/node_modules
 electron/dist
+electron/package-lock.json
 
 # Logs
 logs
