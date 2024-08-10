@@ -17,7 +17,7 @@ The Quick Launcher software streamlines the process of launching applications, o
 
 [Change Log](ChangeLog.md)
 
-[demo quick.json](electron\quick.json)
+[demo quick.json](electron/quick.json)
 
 
 # FOSSA analyzer
