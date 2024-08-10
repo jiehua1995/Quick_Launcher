@@ -28,7 +28,7 @@ jobs:
         working-directory: ./electron
 
       - name: Install dependencies
-        run: npm install --no-optional
+        run: npm install
         working-directory: ./electron
       
       - name: Install npm-check-updates
@@ -40,16 +40,10 @@ jobs:
         working-directory: ./electron
 
       - name: Install updated dependencies
-        run: |
-          if [[ "${{ matrix.os }}" == "macos-latest" ]]; then
-            npm install --no-optional
-          else
-            npm install --ignore-scripts --no-optional
-          fi
+        run: npm install
         shell: bash
         working-directory: ./electron
       
-
       - name: Build CSS
         run: npm run build-css
         working-directory: ./electron

@@ -34,5 +34,7 @@ mac:
     - dmg
   artifactName: "${productName}-v${version}-${os}-${arch}.${ext}"
   icon: assets/icon.icns
+  license: assets/LICENSE
   hardenedRuntime: false
   gatekeeperAssess: false
+  darkModeSupport: true
