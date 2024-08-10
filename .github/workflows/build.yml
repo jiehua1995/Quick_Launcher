@@ -25,12 +25,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: |
-          if [[ "${{ matrix.os }}" == "macos-latest" ]]; then
-            npm install
-          else
-            npm install --ignore-scripts
-          fi
+        run: npm install
         working-directory: ./electron
       
       - name: Install npm-check-updates
@@ -48,7 +43,9 @@ jobs:
           else
             npm install --ignore-scripts
           fi
+        shell: bash
         working-directory: ./electron
+      
 
       - name: Build CSS
         run: npm run build-css
@@ -56,11 +53,11 @@ jobs:
 
       - name: Build Electron app for ${{ matrix.os }}
         run: |
-          if [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
+          if [ "${{ matrix.os }}" == "ubuntu-latest" ]; then
             npx electron-builder --linux
-          elif [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+          elif [ "${{ matrix.os }}" == "windows-latest" ]; then
             npx electron-builder --win
-          else
+          elif [ "${{ matrix.os }}" == "macos-latest" ]; then
             npx electron-builder --mac
           fi
         shell: bash
