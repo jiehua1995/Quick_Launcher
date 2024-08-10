@@ -23,6 +23,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Remove node_modules
+        run: rm -rf node_modules pacakge-lock.json
+        working-directory: ./electron
 
       - name: Install dependencies
         run: npm install --no-optional
