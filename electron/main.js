@@ -7,17 +7,20 @@ let mainWindow;
 let loadingWindow;
 
 app.disableHardwareAcceleration();
+// 禁用硬件加速，解决 Electron 在某些系统上的渲染问题
 
 function createLoadingWindow() {
   loadingWindow = new BrowserWindow({
     width: 300,
     height: 300,
     frame: false,
-    transparent: true,
+    transparent: false,
     alwaysOnTop: true,
     icon: path.join(__dirname, 'assets', 'icon.ico'),
     webPreferences: {
-      nodeIntegration: false
+      nodeIntegration: false,
+      contextIsolation: true,
+      preload: path.join(__dirname, 'preload-loading.js') // 引入预加载脚本
     }
   });
 
@@ -61,8 +64,10 @@ function createMainWindow() {
 app.on('ready', () => {
   createLoadingWindow();
   createMainWindow();
+});
 
-  // 在2秒后显示主窗口并关闭加载窗口
+ipcMain.on('loading-ready', () => {
+  // 在loading.html加载完成后，显示主窗口
   setTimeout(() => {
     if (loadingWindow) {
       loadingWindow.close();

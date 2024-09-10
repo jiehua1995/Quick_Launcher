@@ -2,6 +2,7 @@ appId: com.jiehua.quicklauncher
 productName: QuickLauncher
 copyright: Copyright © 2024, Hua 
 files:
+  - assets/**
   - renderer/**
   - main.js
   - preload.js
